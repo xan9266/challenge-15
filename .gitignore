@@ -2,6 +2,7 @@
 TODO.md
 .env
 .DS_Store
+mcp.json
 
 # 📦 Dépendances locales
 node_modules/
