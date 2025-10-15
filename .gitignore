@@ -1,0 +1,12 @@
+# 🧭 Ignorer les fichiers locaux et temporaires
+TODO.md
+.env
+.DS_Store
+
+# 📦 Dépendances locales
+node_modules/
+
+# ☁️ Dossiers internes Supabase (non versionnés)
+supabase/.branches/
+supabase/.config/
+supabase/.local/
