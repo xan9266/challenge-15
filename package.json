@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Front-end for CHALLENGE-15 attendance management system",
   "type": "module",
+
+  "homepage": "https://github.com/xan9266/challenge-15",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
