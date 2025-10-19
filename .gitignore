@@ -1,6 +1,9 @@
 # 🧭 Ignorer les fichiers locaux et temporaires
 TODO.md
 .env
+.env.local
+.env.production
+.env.staging
 .DS_Store
 mcp.json
 
