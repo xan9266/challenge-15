@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
   </head>
   <body>
     <script>
-      // Redirige vers index.html tout en gardant l’URL de la route SPA
-      const path = window.location.pathname.replace('/challenge-15', '');
+      // Nom du dépôt GitHub Pages (adapter ici)
+      const repo = '/challenge-15';
+
+      // Construit la route originale
+      const path = window.location.pathname.replace(repo, '');
       const search = window.location.search;
       const hash = window.location.hash;
-      window.location.replace('/challenge-15/' + '?' + 'redirect=' + encodeURIComponent(path + search + hash));
+
+      // Enregistre la redirection temporairement
+      sessionStorage.redirect = path + search + hash;
+
+      // Recharge l'app principale
+      window.location.replace(`${repo}/`);
     </script>
   </body>
 </html>
