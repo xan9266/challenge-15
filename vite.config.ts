@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/challenge-15',
+  base: '/challenge-15/',
   resolve: {
     alias: {
       '@pages': path.resolve(__dirname, './src/pages'),
