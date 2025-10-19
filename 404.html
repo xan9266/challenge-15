@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <script>
+      // Nom du dépôt GitHub Pages (adapter ici)
+      const repo = '/challenge-15';
+
+      // Construit la route originale
+      const path = window.location.pathname.replace(repo, '');
+      const search = window.location.search;
+      const hash = window.location.hash;
+
+      // Enregistre la redirection temporairement
+      sessionStorage.redirect = path + search + hash;
+
+      // Recharge l'app principale
+      window.location.replace(`${repo}/`);
+    </script>
+  </body>
+</html>
