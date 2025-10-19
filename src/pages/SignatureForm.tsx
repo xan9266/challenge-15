@@ -20,7 +20,6 @@ const Toast: React.FC<ToastProps> = ({ message, type, isVisible }) => {
     <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
       className={`fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg text-white z-50 ${
         type === 'success' ? 'bg-success' : 'bg-error'
       }`}
@@ -66,7 +65,7 @@ const SignatureForm: React.FC = () => {
       return
     }
 
-    if (!signatureRef.current?.isEmpty()) {
+    if (signatureRef.current?.isEmpty()) {
       showToast('Veuillez signer avant d\'envoyer', 'error')
       return
     }
@@ -79,12 +78,13 @@ const SignatureForm: React.FC = () => {
 
       // Appeler l'Edge Function submit-signature
       const { data, error } = await supabase.functions.invoke('submit-signature', {
-        body: {
+        body: JSON.stringify({
           token,
           name: name.trim(),
           signatureData
-        }
+        }),
       })
+
 
       if (error) {
         console.error('Erreur lors de l\'envoi:', error)

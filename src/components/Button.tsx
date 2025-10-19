@@ -17,12 +17,16 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   type = 'button'
 }) => {
-  const baseClasses = 'px-6 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2'
+  const baseClasses =
+    'px-6 py-3 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-md'
 
   const variantClasses = {
-    primary: 'bg-primary text-white hover:bg-blue-600 focus:ring-primary',
-    success: 'bg-success text-white hover:bg-green-600 focus:ring-success',
-    error: 'bg-error text-white hover:bg-red-600 focus:ring-error'
+    primary:
+      'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+    success:
+      'bg-green-500 text-white hover:bg-green-600 focus:ring-green-400',
+    error:
+      'bg-red-500 text-white hover:bg-red-600 focus:ring-red-400'
   }
 
   return (
@@ -30,7 +34,9 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseClasses} ${variantClasses[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
+      className={`${baseClasses} ${variantClasses[variant]} ${
+        disabled ? 'opacity-60 cursor-not-allowed' : ''
+      } ${className}`}
     >
       {children}
     </button>
