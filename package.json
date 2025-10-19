@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Front-end for CHALLENGE-15 attendance management system",
   "type": "module",
-
-  "homepage": "https://github.com/xan9266/challenge-15",
+  "homepage": "https://xan9266.github.io/challenge-15",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "connect-history-api-fallback": "^2.0.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
